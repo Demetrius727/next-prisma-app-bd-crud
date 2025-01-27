@@ -1,9 +1,10 @@
 import Page from "@/app/components/template/Page";
+import UserList from "@/app/components/user/UserList";
 
-export default function UsersPage() {
+export default function UserPage() {
     return (
         <Page>
-            <h1>Usuários</h1>
+            <UserList />
         </Page>
     );
 }

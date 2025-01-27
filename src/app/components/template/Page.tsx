@@ -6,7 +6,7 @@ export interface PageProps {
 
 export default function Page(props: PageProps) {
     return (
-        <div className="flex h-screen">
+        <div className="flex">
             <Menu />
             <main className="flex-1 p-7">{props.children}</main>
         </div>
