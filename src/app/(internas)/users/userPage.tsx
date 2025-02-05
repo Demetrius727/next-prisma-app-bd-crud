@@ -25,12 +25,20 @@ export default function UserPage() {
         setUser(null)
     }
 
+    async function deletar() {
+        if (!user || !user.id) return;
+        await Backend.users.deletar(user.id)
+        const users = await Backend.users.obter()
+        setUsers(users)
+        setUser(null)
+    }
+
     return (
         <Page className="flex flex-col gap-10">
             <Title icon={IconUser} primary="Usuários" secondary="Cadastro de Usuários"/>
             
             {user ? (
-                <UserForm user={user} onChange={setUser} salvar={salvar} cancelar={() => setUser(null)}/>
+                <UserForm user={user} onChange={setUser} salvar={salvar} cancelar={() => setUser(null)} deletar={deletar}/>
             ): (
 
                 <>
